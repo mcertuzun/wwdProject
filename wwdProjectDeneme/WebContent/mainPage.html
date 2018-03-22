@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+	integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<style>
+input {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid;
+}
+
+.hopeless {
+	padding: 180px;
+}
+
+.form-element {
+	margin: 12px;
+	position: relative;
+}
+
+body {
+	
+}
+
+#jumbotronc {
+	background-color: #222E33;
+	height: 500px;
+	margin: 70px 0px 70px 0px;
+	background-image: url(images/Untitled-1.gif);
+	background-position: 50% 90%;
+	background-repeat: no-repeat;
+}
+
+#jumbotrons {
+	background-image: url(images/gra3.jpg);
+	background-position: bottom;
+}
+
+.jumbotron {
+	text-align: center;
+	margin-top: 50px;
+	color: whitesmoke;
+}
+
+#about {
+	text-align: center;
+}
+
+#email {
+	width: 300px;
+}
+
+#info {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.card-img-top {
+	width: 50%;
+}
+
+body {
+	position: relative;
+}
+
+a {
+	color: whitesmoke;
+	text-decoration-line: none;
+}
+
+a:hover {
+	color: whitesmoke;
+}
+
+i {
+	padding-right: 10px;
+}
+
+#regBut {
+	border: 1px solid whitesmoke;
+	background: transparent;
+}
+</style>
+
+</h:head>
+
+<h:body data-spy="scroll" data-target="#navbar" data-offset="150">
+
+	<nav class="navbar navbar-inverse  bg-inverse navbar-fixed-top"
+		id="navbar">
+		<a class="navbar-brand" href="#">MyApp</a>
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="#jumbotron">Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#about">Login</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="#footer">Register</a>
+			</li>
+			<li class="nav-item"><a class="nav-link" href="#footer">About</a>
+			</li>
+		</ul>
+		<form class="form-inline pull-xs-right">
+			<input class="form-control" type="email" placeholder="Email">
+			<input class="form-control" type="password" placeholder="Password">
+			<button class="btn btn-secondary" type="submit">Login</button>
+		</form>
+	</nav>
+
+	<div class="jumbotron" id="jumbotrons">
+		<h1 class="display-3">World Wind</h1>
+		<p class="lead">This is a simple 3D earth model.</p>
+		<hr class="my-4">
+		<p>To get news submit your e-mail!</p>
+
+		<form class="form-inline">
+			<div class="form-group">
+				<label class="sr-only" for="email">Email address</label>
+				<div class="input-group">
+					<div class="input-group-addon">@</div>
+					<input type="email" class="form-control" id="email"
+						placeholder="Your email">
+				</div>
+			</div>
+			<button type="submit" class="btn btn-secondary">Sign up</button>
+		</form>
+	</div>
+	<hr>
+
+
+
+	<div class="container">
+
+		<div class="row" id="info">
+
+			<h1>What is WWD</h1>
+			<p class="lead">WorldWind is a free, open source API for a
+				virtual globe. WorldWind allows developers to quickly and easily
+				create interactive visualizations of 3D globe, map and geographical
+				information. Organizations across the world use WorldWind to monitor
+				weather patterns, visualize cities and terrain, track vehicle
+				movement, analyze geospatial data, and educate people about the
+				Earth.</p>
+			<button type="submit" class="btn btn-primary btn-lg">Test it</button>
+		</div>
+
+	</div>
+	<hr>
+
+	<div class="jumbotron" id="jumbotronc">
+
+
+		<form class="hopeless">
+
+			<div class="register down" id="registerForm">
+
+				<div class="form-element">
+					<span><i class="fa fa-user"></i></span><input value="#{userRegisterView.name}" type="text"
+						placeholder="Full Name" />
+				</div>
+				<div class="form-element">
+					<span><i class="fa fa-envelope"></i></span><input value="#{userRegisterView.email}" type="email"
+						placeholder="Your Email Address" />
+				</div>
+				<div class="form-element">
+					<span><i class="fa fa-lock"></i></span><input value="#{userRegisterView.password}" type="password"
+						placeholder="Password" />
+				</div>
+				<div class="form-element">
+					<span><i class="fa fa-lock"></i></span><input type="password"
+						placeholder="Re-Enter Password" />
+				</div>
+				<button  actionListener="#{userRegisterView.register}" class="btn regbtn" id="regBut">register</button>
+
+			</div>
+		</form>
+
+	</div>
+
+	<hr>
+	<div class="container" id="about">
+		<div class="card-deck-wrapper">
+			<div class="card-deck">
+				<div class="card">
+					<img class="card-img-top" src="images/download.png"
+						alt="Card image cap">
+					<div class="card-block">
+						<h2>It's open source</h2>
+						<p class="card-text">Because WorldWind is completely open
+							source, extending the API is simple and easy to do. This creates
+							a powerful platform for giving any application the means to
+							express, manipulate and analyze spatial data. WorldWind
+							technology can be incorporated into a wide range of applications,
+							including Windows, Mac, Linux, web, and mobile devices.</p>
+
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="images/Assembly-icon.png"
+						alt="Card image cap">
+					<div class="card-block">
+						<h2>Build what you want</h2>
+						<p class="card-text">WorldWind is different from a 3D globe
+							like Google Earth because it is not an application. Instead, it
+							is an SDK (software development kit) that software engineers can
+							use to build their own applications. WorldWind provides a
+							geographic rendering engine for powering a wide range of
+							projects, from satellite tracking systems to flight simulators.</p>
+
+					</div>
+				</div>
+				<div class="card">
+					<img class="card-img-top" src="images/nn.jpg" alt="Card image cap">
+					<div class="card-block">
+						<h2>NASA does the heavy lifting</h2>
+						<p class="card-text">With WorldWind handling the hard work of
+							visualizing geographic data (generating terrain from elevation
+							models, selecting and displaying images from imagery servers,
+							etc), software engineers are free to focus on solving the
+							problems specific to their own domains and quickly building
+							whatever geospatial applications they choose.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"
+		integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7"
+		crossorigin="anonymous"></script>
+
+
+
+	<script type="text/javascript">
+      
+     
+      </script>
+
+
+
+</h:body>
+
+</html>
